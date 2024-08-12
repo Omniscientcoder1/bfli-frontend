@@ -1,204 +1,125 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
 import Image from "next/image";
 
-const About = () => {
+export default function About() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    if (!isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  };
+
   return (
-    <>
-      {/* <!-- ===== About Start ===== --> */}
-      <section className="overflow-hidden pb-20 lg:pb-25 xl:pb-30">
-        <div className="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
-          <div className="flex items-center gap-8 lg:gap-32.5">
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  x: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  x: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
-            >
-              <Image
-                src="/images/about/about-light-01.png"
-                alt="About"
-                className="dark:hidden"
-                fill
-              />
-              <Image
-                src="/images/about/about-dark-01.png"
-                alt="About"
-                className="hidden dark:block"
-                fill
-              />
-            </motion.div>
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  x: 20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  x: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_right md:w-1/2"
-            >
-              <span className="font-medium uppercase text-black dark:text-white">
-                {/*<span className="mb-4 mr-4 inline-flex rounded-full bg-meta px-4.5 py-1 text-metatitle uppercase text-white ">
-                  New
-                </span>{" "}*/}
-                We provide
-              </span>
-              <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                Complete Shariah Based Solutions for all Your 
-                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark">
-                  Financial Needs
-                </span>
-              </h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                ultricies lacus non fermentum ultrices. Fusce consectetur le.
-              </p>
-
-              <div className="mt-7.5 flex items-center gap-5">
-                <div className="flex h-15 w-15 items-center justify-center rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection">
-                  <p className="text-metatitle2 font-semibold text-black dark:text-white">
-                    01
-                  </p>
-                </div>
-                <div className="w-3/4">
-                  <h3 className="mb-0.5 text-metatitle2 text-black dark:text-white">
-                    React 18, Next.js 13 and TypeScript
-                  </h3>
-                  <p>Ut ultricies lacus non fermentum ultrices.</p>
-                </div>
-              </div>
-              <div className="mt-7.5 flex items-center gap-5">
-                <div className="flex h-15 w-15 items-center justify-center rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection">
-                  <p className="text-metatitle2 font-semibold text-black dark:text-white">
-                    02
-                  </p>
-                </div>
-                <div className="w-3/4">
-                  <h3 className="mb-0.5 text-metatitle2 text-black dark:text-white">
-                    Fully Customizable
-                  </h3>
-                  <p>consectetur adipiscing elit fermentum ultricies.</p>
-                </div>
-              </div>
-            </motion.div>
+    <div className={`${isDarkMode ? 'dark' : ''}`}>
+      {/* <button
+        onClick={toggleDarkMode}
+        className="m-4 px-4 py-2 bg-gray-800 text-white dark:bg-white dark:text-black rounded"
+      >
+        Toggle Dark Mode
+      </button> */}
+      
+      <div className="bg-white dark:bg-gray-900">
+        <section className="bg-primary-dark text-black dark:text-white py-8">
+          <div className="container mx-auto text-center">
+            {/* <Image src="/logo.png" alt="Bangladesh Finance Islamic" width={200} height={50} /> */}
           </div>
-        </div>
-      </section>
-      {/* <!-- ===== About End ===== --> */}
+        </section>
 
-      {/* <!-- ===== About Two Start ===== -->*/} 
-      <section>
-        <div className="mx-auto max-w-c-1235 overflow-hidden px-4 md:px-8 2xl:px-0">
-          <div className="flex items-center gap-8 lg:gap-32.5">
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  x: -20,
-                },
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-center text-4xl font-bold text-orange-600 dark:text-orange-300 mb-8">OVERVIEW</h2>
+            <p className="text-center text-lg text-black dark:text-white mb-16">
+              Complete suite of products and services that are designed to fulfill your financial needs in a truly Shariah-compliant way from the wide network of City Bank branches, sub-branches, and ATMs across the country.
+            </p>
 
-                visible: {
-                  opacity: 1,
-                  x: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_left md:w-1/2"
-            >
-              <h4 className="font-medium uppercase text-black dark:text-white">
-                Launch Your SaaS Fast
-              </h4>
-              <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                Packed with All Essential {"   "}
-                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg2 dark:before:bg-titlebgdark">
-                  Integrations
-                </span>
-              </h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                ultricies lacus non fermentum ultrices. Fusce consectetur le.
-              </p>
-              <div>
-                <a
-                  href="#"
-                  className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary dark:text-white dark:hover:text-primary"
-                >
-                  <span className="duration-300 group-hover:pr-2">
-                    Know More
-                  </span>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="currentColor"
-                  >
-                    <path d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z" />
-                  </svg>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-orange-600 dark:text-orange-300">Islamic Banking</h3>
+                <p className="text-black dark:text-white mt-4">
+                  Islamic Banking is a financial system conducting banking and business activities in line with the provisions and principles of Islamic Shariah. It follows the beliefs and principles of Shariah jurisprudence pertaining to trade and business. The modern Islamic Banking industry emerged only in the 1970s, in large part because of efforts by early 20th-century Muslim economists who envisioned alternatives to conventional Western Economics, whose interest-based transactions violate Shariah.
+                </p>
+              </div>
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-orange-600 dark:text-orange-300">Inception of BD Finance Islamic Banking</h3>
+                <p className="text-black dark:text-white mt-4">
+                  Islamic Banking is a financial system conducting banking and business activities in line with the provisions and principles of Islamic Shariah. It follows the beliefs and principles of Shariah jurisprudence pertaining to trade and business. The modern Islamic Banking industry emerged only in the 1970s, in large part because of efforts by early 20th-century Muslim economists who envisioned alternatives to conventional Western Economics, whose interest-based transactions violate Shariah.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-primary-dark text-black dark:text-white py-8">
+          <div className="container mx-auto">
+            <h2 className="text-center text-4xl font-bold mb-8">KEY FEATURES</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-gray-300 h-48 dark:bg-gray-700"></div>
+              <div className="bg-gray-300 h-48 dark:bg-gray-700"></div>
+              <div className="bg-gray-300 h-48 dark:bg-gray-700"></div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16">
+          <div className="container mx-auto">
+            <h2 className="text-center text-4xl font-bold text-orange-600 dark:text-orange-300 mb-8">Shariah Advisory Committee</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="bg-gray-300 h-48 dark:bg-gray-700"></div>
+              <div className="bg-gray-300 h-48 dark:bg-gray-700"></div>
+              <div className="bg-gray-300 h-48 dark:bg-gray-700"></div>
+              <div className="bg-gray-300 h-48 dark:bg-gray-700"></div>
+            </div>
+          </div>
+        </section>
+
+        {/* <footer className="bg-primary-dark text-black dark:text-white py-8">
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="text-center">
+              <Image src="/logo.png" alt="Bangladesh Finance Islamic" width={150} height={40} />
+            </div>
+            <div className="text-center">
+              <h3 className="text-lg font-bold">INFORMATION SECTION</h3>
+              <ul className="list-none text-sm mt-4">
+                <li>Schedule of charges</li>
+                <li>Profit rates</li>
+                <li>Forms</li>
+                <li>FAQ</li>
+                <li>Get in touch form</li>
+                <li>Product Brochures</li>
+              </ul>
+            </div>
+            <div className="text-center">
+              <h3 className="text-lg font-bold">QUICK LINKS</h3>
+              <ul className="list-none text-sm mt-4">
+                <li>BFL Main Website</li>
+                <li>Shariah Supervisory Committee</li>
+                <li>News & Publications</li>
+                <li>Events</li>
+              </ul>
+              <div className="flex justify-center space-x-4 mt-4">
+                <a href="#" className="text-black dark:text-white">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" className="text-black dark:text-white">
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" className="text-black dark:text-white">
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a href="#" className="text-black dark:text-white">
+                  <i className="fab fa-youtube"></i>
                 </a>
               </div>
-            </motion.div>
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  x: 20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  x: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_right relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
-            >
-              <Image
-                src="./images/about/about-light-02.svg"
-                alt="About"
-                className="dark:hidden"
-                fill
-              />
-              <Image
-                src="./images/about/about-dark-02.svg"
-                alt="About"
-                className="hidden dark:block"
-                fill
-              />
-            </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
-      {/* <!-- ===== About Two End ===== --> */}
-    </>
+        </footer> */}
+      </div>
+    </div>
   );
-};
-
-export default About;
+}

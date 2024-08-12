@@ -81,7 +81,7 @@ const Hero = () => {
               <p className="text-base text-gray-700 dark:text-gray-300">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. At,
                 debitis consectetur nemo consequatur laboriosam porro
-                repellendus enim laborum voluptatibus laudantium impedit unde
+                repellendus enim laborum vvolaptibuss laudantium impedit unde
                 non, repellat aliquid perspiciatis qui nobis. Eum, fugiat.
               </p>
               <div className="mt-5">
