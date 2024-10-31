@@ -1,34 +1,23 @@
-import React from "react";
-import SectionHeader from "../Common/SectionHeader";
-import BlogItem from "./BlogItem";
-import BlogData from "./blogData";
+// components/Blog/index.tsx
 
-const Blog = async () => {
-  return (
-    <section className="py-20 lg:py-25 xl:py-30">
-      <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-        {/* <!-- Section Title Start --> */}
-        <div className="animate_top mx-auto text-center">
-          <SectionHeader
-            headerInfo={{
-              title: `NEWS & BLOGS`,
-              subtitle: `Latest News & Blogs`,
-              description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`,
-            }}
-          />
-        </div>
-        {/* <!-- Section Title End --> */}
-      </div>
+import blogData from 'components/Blog/blogData';
+import BlogItem from './BlogItem';
+import Link from 'next/link';
 
-      <div className="mx-auto mt-15 max-w-c-1280 px-4 md:px-8 xl:mt-20 xl:px-0">
-        <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-10">
-          {BlogData.slice(0, 3).map((blog, key) => (
-            <BlogItem blog={blog} key={key} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+const Blog = () => (
+  <section className="max-w-6xl mx-auto p-6">
+    <h2 className="text-3xl font-bold text-center mb-6">Latest Blogs</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {blogData.slice(0, 3).map((blog) => (
+        <BlogItem key={blog.id} blog={blog} redirectToGrid={true} />
+      ))}
+    </div>
+    <div className="text-center mt-6">
+      <Link href="/blog" className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+        Read More Blogs
+      </Link>
+    </div>
+  </section>
+);
 
 export default Blog;

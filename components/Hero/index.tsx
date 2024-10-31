@@ -12,12 +12,12 @@ const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const images = [
-    "/images/hero/hero-image-1.jpg",
-    "/images/hero/hero-image-2.jpg",
-    "/images/hero/hero-image-3.jpg",
-    "/images/hero/hero-image-4.jpg",
-    // "/images/hero/hero-image-5.jpg",
-    // "/images/hero/hero-image-6.jpg",
+    "/images/hero/bfl_banner.jpg",
+    "/images/hero/bfl_islamic.jpg",
+    "/images/hero/bijoy.jpg",
+    "/images/hero/deposit.jpg",
+    "/images/hero/green_deposit.jpg",
+    "/images/hero/krishi.jpg",
   ];
 
   const handleMouseEnter = () => {
@@ -37,7 +37,7 @@ const Hero = () => {
       <section className="overflow-hidden pb-20 pt-10 md:pt-40 xl:pb-15 xl:pt-20">
         <div className="w-full">
           <div
-            className="relative w-full h-[200px] md:h-[400px] lg:h-[400px]"
+            className="relative w-full h-[200px] md:h-[400px] lg:h-[600px]"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >

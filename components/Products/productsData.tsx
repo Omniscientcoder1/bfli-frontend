@@ -1,20 +1,20 @@
-import { Product } from "@/types/product";
-
-const productsData: Product[] = [
+// productsData.tsx
+const products = [
   {
-    id: 1,
-    icon: "/images/icon/icon-01.svg",
-    title: <strong>Islamic Deposit Products</strong>,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
+      id: 1,
+      name: "Product 1",
+      description: "Description of product 1",
+      price: 100,
+      image: "/path/to/image1.jpg"
   },
   {
-    id: 2,
-    icon: "/images/icon/icon-02.svg",
-    title: <strong>Islamic Financing Products</strong>,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
+      id: 2,
+      name: "Product 2",
+      description: "Description of product 2",
+      price: 150,
+      image: "/path/to/image2.jpg"
   },
+  // Add more products as needed
 ];
 
-export default productsData;
+export default products;
