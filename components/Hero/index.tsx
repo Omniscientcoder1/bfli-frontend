@@ -6,6 +6,7 @@ import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 const Hero = () => {
   const [email, setEmail] = useState("");
@@ -85,9 +86,11 @@ const Hero = () => {
                 non, repellat aliquid perspiciatis qui nobis. Eum, fugiat.
               </p>
               <div className="mt-5">
-                <button className="px-8 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600">
-                  Learn More
-                </button>
+                <Link href="/about">
+                  <button className="px-8 py-3 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600">
+                    Learn More
+                  </button>
+                </Link>
               </div>
 
               <div className="mt-10">
